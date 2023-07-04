@@ -2,6 +2,7 @@ import os
 from flask import Flask
 from flask_smorest import Api
 
+
 from db import db
 import models
 
@@ -32,8 +33,5 @@ def create_app(db_url = None):
 
     api.register_blueprint(ItemBlueprint)
     api.register_blueprint(StoreBlueprint)
-
-
-
 
     return app
