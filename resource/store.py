@@ -37,7 +37,7 @@ class StoreList(MethodView):
     
 
 
-@blp.route("/stores/<string:store_id>")
+@blp.route("/stores/<int:store_id>")
 class StoreID(MethodView):
 
     @blp.response(200, StoreSchemas)
