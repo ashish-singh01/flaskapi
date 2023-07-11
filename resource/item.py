@@ -29,7 +29,7 @@ class ItemList(MethodView):
 
         return item
 
-@blp.route("/items/<string:item_id>")
+@blp.route("/items/<int:item_id>")
 class ItemID(MethodView):
 
     @blp.response(200, ItemSchemas)

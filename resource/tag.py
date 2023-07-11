@@ -9,7 +9,7 @@ from schemas import TagSchemas, TagAndItemSchemas
 blp = Blueprint("Tags", "tags", description="Operations on tags")
 
 
-@blp.route("/stores/<string:store_id>/tags")
+@blp.route("/stores/<int:store_id>/tags")
 class TagsInStore(MethodView):
     @blp.response(200, TagSchemas(many=True))
     def get(self, store_id):
@@ -37,7 +37,7 @@ class TagsInStore(MethodView):
         return tag
 
 
-@blp.route("/items/<string:item_id>/tags/<string:tag_id>")
+@blp.route("/items/<int:item_id>/tags/<int:tag_id>")
 class LinkTagsToItem(MethodView):
     @blp.response(201, TagSchemas)
     def post(self, item_id, tag_id):
